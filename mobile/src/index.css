@@ -1,0 +1,130 @@
+/* SISTEMA DE TEMAS BROSPOT */
+
+:root {
+  /* MODO CLARO (default) */
+  --color-primario: #4f46e5;
+  --color-primario-hover: #4338ca;
+  --color-primario-suave: #ede9fe;
+  --color-primario-borde: #c7d2fe;
+  
+  /* Fondos */
+  --bg-app: #f8f9fc;
+  --bg-card: #ffffff;
+  --bg-elevated: #ffffff;
+  --bg-input: #ffffff;
+  --bg-hover: #f3f4f6;
+  
+  /* Textos */
+  --text-principal: #0f172a;
+  --text-secundario: #475569;
+  --text-suave: #94a3b8;
+  --text-blanco: #ffffff;
+  
+  /* Bordes */
+  --border-suave: #e5e7eb;
+  --border-medio: #d1d5db;
+  
+  /* Estados */
+  --color-exito: #10b981;
+  --color-error: #ef4444;
+  --color-advertencia: #f59e0b;
+  --color-info: #3b82f6;
+  
+  /* Sombras */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08);
+  
+  /* Otros */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+  
+  --transition: 0.2s ease;
+}
+
+[data-theme="dark"] {
+  /* MODO OSCURO */
+  --color-primario: #818cf8;
+  --color-primario-hover: #a5b4fc;
+  --color-primario-suave: #1e1b4b;
+  --color-primario-borde: #312e81;
+  
+  /* Fondos */
+  --bg-app: #0a0a0f;
+  --bg-card: #14141c;
+  --bg-elevated: #1c1c26;
+  --bg-input: #14141c;
+  --bg-hover: #1f1f2e;
+  
+  /* Textos */
+  --text-principal: #f1f5f9;
+  --text-secundario: #cbd5e1;
+  --text-suave: #64748b;
+  --text-blanco: #ffffff;
+  
+  /* Bordes */
+  --border-suave: #2a2a3a;
+  --border-medio: #3a3a4a;
+  
+  /* Estados (un poco mas claros para oscuro) */
+  --color-exito: #34d399;
+  --color-error: #f87171;
+  --color-advertencia: #fbbf24;
+  --color-info: #60a5fa;
+  
+  /* Sombras (mas suaves en oscuro) */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-principal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: var(--transition);
+}
+
+input, select, textarea {
+  font-family: inherit;
+  outline: none;
+  transition: var(--transition);
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-medio);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-suave);
+}
