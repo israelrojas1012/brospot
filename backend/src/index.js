@@ -56,6 +56,7 @@ app.get('/', (req, res) => {
   res.json({ mensaje: '🟢 Brospot API funcionando' });
 });
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT, '0.0.0.0', () => {
   console.log(`🚀 Servidor corriendo en puerto ${process.env.PORT}`);
+  console.log(`📱 Accesible desde tu celular en: http://192.168.100.142:${process.env.PORT}`);
 });

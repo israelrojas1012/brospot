@@ -1,17 +1,30 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
+import basicSsl from '@vitejs/plugin-basic-ssl'
 
 export default defineConfig({
+  server: {
+    host: true,
+    port: 5173,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:4000',
+        changeOrigin: true,
+        secure: false
+      }
+    }
+  },
   plugins: [
     react(),
+    basicSsl(),
     VitePWA({
       registerType: 'autoUpdate',
       devOptions: {
         enabled: true,
         type: 'module'
       },
-      includeAssets: ['icon-192.png', 'icon-512.png'],
+      includeAssets: ['icon-192.png', 'icon-512.png', 'screenshot_mobile.png', 'screenshot_desktop.png'],
       manifest: {
         id: '/',
         name: 'Brospot - Reservas Deportivas',
@@ -37,6 +50,22 @@ export default defineConfig({
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any'
+          }
+        ],
+        screenshots: [
+          {
+            src: '/screenshot_mobile.png',
+            sizes: '336x749',
+            type: 'image/png',
+            form_factor: 'narrow',
+            label: 'Pantalla principal de Brospot en móvil'
+          },
+          {
+            src: '/screenshot_desktop.png',
+            sizes: '957x947',
+            type: 'image/png',
+            form_factor: 'wide',
+            label: 'Pantalla principal de Brospot en escritorio'
           }
         ]
       },
